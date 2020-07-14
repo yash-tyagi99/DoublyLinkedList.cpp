@@ -33,6 +33,8 @@ class DoublyLinkedList
     {
         head = n;
     }
+    // 1. CHeck if node exists using key value..
+ 
     Node * nodeExists(int k)
     {
         Node * temp =NULL;
@@ -49,6 +51,8 @@ class DoublyLinkedList
         
         return temp;
     }
+    // 2. Append a node to the list - Attach the node at the end..
+ 
 
     void appendNode(Node* n)
     {
@@ -76,6 +80,8 @@ class DoublyLinkedList
             }
         }
     }
+    // 3. Prepend Node - Attach a node at the start..
+ 
     void prependNode(Node * n)
     {
         if(nodeExists(n ->key)!=NULL)
@@ -98,6 +104,8 @@ class DoublyLinkedList
             }
         }
     }
+    // 4. Insert a Node after a particular node in the list..
+ 
     void insertNodeAfter(int k , Node * n)
     {
         Node *ptr = nodeExists(k);
@@ -132,6 +140,8 @@ class DoublyLinkedList
             }
         }
     }
+    // 5. Delete node by unique key..
+ 
     void deleteNodeByKey(int k)
     {
         Node *ptr = nodeExists(k);
@@ -166,6 +176,8 @@ class DoublyLinkedList
             
         }
     }
+    // 6th update node..
+ 
     void updateNodeByKey(int k , int d)
     {
         Node * ptr =nodeExists(k);
@@ -180,6 +192,8 @@ class DoublyLinkedList
         }
         
     }
+    // 7th printing
+ 
     void printList() 
     {
         if (head == NULL) 
@@ -204,6 +218,8 @@ int main()
     DoublyLinkedList obj;
     int  option;
     int key1 ,k1 ,data1;
+    //Run all operation.. 
+ 
     do
     {
         cout<<"What operation do you want to perform?Select option number.Enter 0 for exit"<<endl;
@@ -222,7 +238,7 @@ int main()
             case 0:
               break;
 
-            case 1:
+            case 1: //For append operation.
               cout << "Append Node Operation \nEnter key & data of the Node to be Appended" << endl;
               cin >> key1;
               cin >> data1;
@@ -231,7 +247,7 @@ int main()
               obj.appendNode(n1);
               break;
                
-            case 2:
+            case 2: //For prepend operation.
               cout << "Prepend Node Operation \nEnter key & data of the Node to be Prepended" << endl;
               cin >> key1;
               cin >>data1;
@@ -240,7 +256,7 @@ int main()
               obj.prependNode(n1);
               break;
                
-            case 3:
+            case 3://For insert node after operation.
               cout << "Insert Node After Operation \nEnter key of existing Node after which you want to Insert this New node: " << endl;
               cin >>k1;
               cout <<"Enter key & data of the New Node first:"<<endl;
@@ -252,24 +268,24 @@ int main()
               obj.insertNodeAfter(k1 , n1);
               break;
                
-            case 4:
+            case 4://For delete node by key operation.
               cout << "Delete Node By Key Operation - \nEnter key of the Node to be deleted: " << endl;
               cin >> k1;
               obj.deleteNodeByKey(k1);
               break;
                
-            case 5:
+            case 5://for update node by key operation.
                 cout << "Update Node By Key Operation - \nEnter key & NEW data to be updated" << endl;
                 cin >> key1;
                 cin >> data1;
                 obj.updateNodeByKey(key1, data1);
               break;
                
-            case 6:
+            case 6://For print operation.
                 obj.printList();
               break;
                
-            case 7:
+            case 7://For clear operation.
                 system("cls");
               break;
             default:
